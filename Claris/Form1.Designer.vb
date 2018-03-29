@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Form1
+Partial Class frmCalculo
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
@@ -29,6 +29,8 @@ Partial Class Form1
         Me.LabelNomeCliente = New System.Windows.Forms.Label()
         Me.TextNomeCliente = New System.Windows.Forms.TextBox()
         Me.frmEsquadrias = New System.Windows.Forms.GroupBox()
+        Me.optCusto = New System.Windows.Forms.RadioButton()
+        Me.optMkup = New System.Windows.Forms.RadioButton()
         Me.LabelMarkup = New System.Windows.Forms.Label()
         Me.TextVlMarkup = New System.Windows.Forms.TextBox()
         Me.btnAlterarCusto = New System.Windows.Forms.Button()
@@ -65,6 +67,7 @@ Partial Class Form1
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TextDescVidro = New System.Windows.Forms.TextBox()
         Me.frmVidros = New System.Windows.Forms.GroupBox()
+        Me.lvwVidros = New System.Windows.Forms.ListView()
         Me.txtObsservacoes = New System.Windows.Forms.RichTextBox()
         Me.labelValorCliente = New System.Windows.Forms.Label()
         Me.txtValorInicial = New System.Windows.Forms.TextBox()
@@ -87,6 +90,20 @@ Partial Class Form1
         Me.LabelParcelas = New System.Windows.Forms.Label()
         Me.cbmQParcelas = New System.Windows.Forms.ComboBox()
         Me.frmResumo = New System.Windows.Forms.GroupBox()
+        Me.LabelMkpCliente = New System.Windows.Forms.Label()
+        Me.LabelDescTotal = New System.Windows.Forms.Label()
+        Me.LabelFinalCliente = New System.Windows.Forms.Label()
+        Me.LabelMkpInstCliente = New System.Windows.Forms.Label()
+        Me.LabelMkpVidroCli = New System.Windows.Forms.Label()
+        Me.LabelEsqCliente = New System.Windows.Forms.Label()
+        Me.LabelMkpTotal = New System.Windows.Forms.Label()
+        Me.LabelMkpInst = New System.Windows.Forms.Label()
+        Me.LabelMkpVidro = New System.Windows.Forms.Label()
+        Me.LabelMkpEsq = New System.Windows.Forms.Label()
+        Me.LabelTotalGeral = New System.Windows.Forms.Label()
+        Me.LabelVLResutlInstal = New System.Windows.Forms.Label()
+        Me.LabelResVidro = New System.Windows.Forms.Label()
+        Me.LabelResEsq = New System.Windows.Forms.Label()
         Me.LabelTotal = New System.Windows.Forms.Label()
         Me.LabelInstalacao = New System.Windows.Forms.Label()
         Me.LabelVidros = New System.Windows.Forms.Label()
@@ -98,22 +115,6 @@ Partial Class Form1
         Me.Label34 = New System.Windows.Forms.Label()
         Me.btnAdicionarNegocio = New System.Windows.Forms.Button()
         Me.btnRemoverNegocio = New System.Windows.Forms.Button()
-        Me.optCusto = New System.Windows.Forms.RadioButton()
-        Me.optMkup = New System.Windows.Forms.RadioButton()
-        Me.LabelResEsq = New System.Windows.Forms.Label()
-        Me.LabelResVidro = New System.Windows.Forms.Label()
-        Me.LabelVLResutlInstal = New System.Windows.Forms.Label()
-        Me.LabelTotalGeral = New System.Windows.Forms.Label()
-        Me.LabelMkpTotal = New System.Windows.Forms.Label()
-        Me.LabelMkpInst = New System.Windows.Forms.Label()
-        Me.LabelMkpVidro = New System.Windows.Forms.Label()
-        Me.LabelMkpEsq = New System.Windows.Forms.Label()
-        Me.LabelMkpInstCliente = New System.Windows.Forms.Label()
-        Me.LabelMkpVidroCli = New System.Windows.Forms.Label()
-        Me.LabelEsqCliente = New System.Windows.Forms.Label()
-        Me.LabelMkpCliente = New System.Windows.Forms.Label()
-        Me.LabelDescTotal = New System.Windows.Forms.Label()
-        Me.LabelFinalCliente = New System.Windows.Forms.Label()
         Me.LabelMetroQuad = New System.Windows.Forms.Label()
         Me.LabelDataCriacao = New System.Windows.Forms.Label()
         Me.LabelDescFabrica = New System.Windows.Forms.Label()
@@ -195,6 +196,28 @@ Partial Class Form1
         Me.frmEsquadrias.TabIndex = 6
         Me.frmEsquadrias.TabStop = False
         Me.frmEsquadrias.Text = "Esquadrias"
+        '
+        'optCusto
+        '
+        Me.optCusto.AutoSize = True
+        Me.optCusto.Location = New System.Drawing.Point(131, 98)
+        Me.optCusto.Name = "optCusto"
+        Me.optCusto.Size = New System.Drawing.Size(52, 17)
+        Me.optCusto.TabIndex = 24
+        Me.optCusto.TabStop = True
+        Me.optCusto.Text = "Custo"
+        Me.optCusto.UseVisualStyleBackColor = True
+        '
+        'optMkup
+        '
+        Me.optMkup.AutoSize = True
+        Me.optMkup.Location = New System.Drawing.Point(189, 98)
+        Me.optMkup.Name = "optMkup"
+        Me.optMkup.Size = New System.Drawing.Size(61, 17)
+        Me.optMkup.TabIndex = 23
+        Me.optMkup.TabStop = True
+        Me.optMkup.Text = "Markup"
+        Me.optMkup.UseVisualStyleBackColor = True
         '
         'LabelMarkup
         '
@@ -494,6 +517,7 @@ Partial Class Form1
         '
         'frmVidros
         '
+        Me.frmVidros.Controls.Add(Me.lvwVidros)
         Me.frmVidros.Controls.Add(Me.TextDescVidro)
         Me.frmVidros.Controls.Add(Me.Label11)
         Me.frmVidros.Controls.Add(Me.LabelDescVidro)
@@ -512,6 +536,14 @@ Partial Class Form1
         Me.frmVidros.TabIndex = 7
         Me.frmVidros.TabStop = False
         Me.frmVidros.Text = "Vidros"
+        '
+        'lvwVidros
+        '
+        Me.lvwVidros.Location = New System.Drawing.Point(10, 60)
+        Me.lvwVidros.Name = "lvwVidros"
+        Me.lvwVidros.Size = New System.Drawing.Size(422, 132)
+        Me.lvwVidros.TabIndex = 23
+        Me.lvwVidros.UseCompatibleStateImageBehavior = False
         '
         'txtObsservacoes
         '
@@ -719,6 +751,132 @@ Partial Class Form1
         Me.frmResumo.TabStop = False
         Me.frmResumo.Text = "Resumo"
         '
+        'LabelMkpCliente
+        '
+        Me.LabelMkpCliente.AutoSize = True
+        Me.LabelMkpCliente.Location = New System.Drawing.Point(319, 172)
+        Me.LabelMkpCliente.Name = "LabelMkpCliente"
+        Me.LabelMkpCliente.Size = New System.Drawing.Size(45, 13)
+        Me.LabelMkpCliente.TabIndex = 18
+        Me.LabelMkpCliente.Text = "Label19"
+        '
+        'LabelDescTotal
+        '
+        Me.LabelDescTotal.AutoSize = True
+        Me.LabelDescTotal.Location = New System.Drawing.Point(179, 172)
+        Me.LabelDescTotal.Name = "LabelDescTotal"
+        Me.LabelDescTotal.Size = New System.Drawing.Size(45, 13)
+        Me.LabelDescTotal.TabIndex = 17
+        Me.LabelDescTotal.Text = "Label20"
+        '
+        'LabelFinalCliente
+        '
+        Me.LabelFinalCliente.AutoSize = True
+        Me.LabelFinalCliente.Location = New System.Drawing.Point(34, 172)
+        Me.LabelFinalCliente.Name = "LabelFinalCliente"
+        Me.LabelFinalCliente.Size = New System.Drawing.Size(45, 13)
+        Me.LabelFinalCliente.TabIndex = 16
+        Me.LabelFinalCliente.Text = "Label21"
+        '
+        'LabelMkpInstCliente
+        '
+        Me.LabelMkpInstCliente.AutoSize = True
+        Me.LabelMkpInstCliente.Location = New System.Drawing.Point(348, 86)
+        Me.LabelMkpInstCliente.Name = "LabelMkpInstCliente"
+        Me.LabelMkpInstCliente.Size = New System.Drawing.Size(45, 13)
+        Me.LabelMkpInstCliente.TabIndex = 14
+        Me.LabelMkpInstCliente.Text = "Label12"
+        '
+        'LabelMkpVidroCli
+        '
+        Me.LabelMkpVidroCli.AutoSize = True
+        Me.LabelMkpVidroCli.Location = New System.Drawing.Point(348, 56)
+        Me.LabelMkpVidroCli.Name = "LabelMkpVidroCli"
+        Me.LabelMkpVidroCli.Size = New System.Drawing.Size(45, 13)
+        Me.LabelMkpVidroCli.TabIndex = 13
+        Me.LabelMkpVidroCli.Text = "Label13"
+        '
+        'LabelEsqCliente
+        '
+        Me.LabelEsqCliente.AutoSize = True
+        Me.LabelEsqCliente.Location = New System.Drawing.Point(348, 25)
+        Me.LabelEsqCliente.Name = "LabelEsqCliente"
+        Me.LabelEsqCliente.Size = New System.Drawing.Size(45, 13)
+        Me.LabelEsqCliente.TabIndex = 12
+        Me.LabelEsqCliente.Text = "Label18"
+        '
+        'LabelMkpTotal
+        '
+        Me.LabelMkpTotal.AutoSize = True
+        Me.LabelMkpTotal.Location = New System.Drawing.Point(293, 118)
+        Me.LabelMkpTotal.Name = "LabelMkpTotal"
+        Me.LabelMkpTotal.Size = New System.Drawing.Size(39, 13)
+        Me.LabelMkpTotal.TabIndex = 11
+        Me.LabelMkpTotal.Text = "Label5"
+        '
+        'LabelMkpInst
+        '
+        Me.LabelMkpInst.AutoSize = True
+        Me.LabelMkpInst.Location = New System.Drawing.Point(293, 87)
+        Me.LabelMkpInst.Name = "LabelMkpInst"
+        Me.LabelMkpInst.Size = New System.Drawing.Size(39, 13)
+        Me.LabelMkpInst.TabIndex = 10
+        Me.LabelMkpInst.Text = "Label6"
+        '
+        'LabelMkpVidro
+        '
+        Me.LabelMkpVidro.AutoSize = True
+        Me.LabelMkpVidro.Location = New System.Drawing.Point(293, 57)
+        Me.LabelMkpVidro.Name = "LabelMkpVidro"
+        Me.LabelMkpVidro.Size = New System.Drawing.Size(39, 13)
+        Me.LabelMkpVidro.TabIndex = 9
+        Me.LabelMkpVidro.Text = "Label7"
+        '
+        'LabelMkpEsq
+        '
+        Me.LabelMkpEsq.AutoSize = True
+        Me.LabelMkpEsq.Location = New System.Drawing.Point(293, 26)
+        Me.LabelMkpEsq.Name = "LabelMkpEsq"
+        Me.LabelMkpEsq.Size = New System.Drawing.Size(39, 13)
+        Me.LabelMkpEsq.TabIndex = 8
+        Me.LabelMkpEsq.Text = "Label8"
+        '
+        'LabelTotalGeral
+        '
+        Me.LabelTotalGeral.AutoSize = True
+        Me.LabelTotalGeral.Location = New System.Drawing.Point(150, 116)
+        Me.LabelTotalGeral.Name = "LabelTotalGeral"
+        Me.LabelTotalGeral.Size = New System.Drawing.Size(39, 13)
+        Me.LabelTotalGeral.TabIndex = 7
+        Me.LabelTotalGeral.Text = "Label4"
+        '
+        'LabelVLResutlInstal
+        '
+        Me.LabelVLResutlInstal.AutoSize = True
+        Me.LabelVLResutlInstal.Location = New System.Drawing.Point(150, 85)
+        Me.LabelVLResutlInstal.Name = "LabelVLResutlInstal"
+        Me.LabelVLResutlInstal.Size = New System.Drawing.Size(39, 13)
+        Me.LabelVLResutlInstal.TabIndex = 6
+        Me.LabelVLResutlInstal.Text = "Label3"
+        '
+        'LabelResVidro
+        '
+        Me.LabelResVidro.AutoSize = True
+        Me.LabelResVidro.Location = New System.Drawing.Point(150, 55)
+        Me.LabelResVidro.Name = "LabelResVidro"
+        Me.LabelResVidro.Size = New System.Drawing.Size(39, 13)
+        Me.LabelResVidro.TabIndex = 5
+        Me.LabelResVidro.Text = "Label2"
+        '
+        'LabelResEsq
+        '
+        Me.LabelResEsq.AutoSize = True
+        Me.LabelResEsq.Location = New System.Drawing.Point(150, 24)
+        Me.LabelResEsq.Name = "LabelResEsq"
+        Me.LabelResEsq.Size = New System.Drawing.Size(39, 13)
+        Me.LabelResEsq.TabIndex = 4
+        Me.LabelResEsq.Text = "Label1"
+        '
         'LabelTotal
         '
         Me.LabelTotal.AutoSize = True
@@ -818,154 +976,6 @@ Partial Class Form1
         Me.btnRemoverNegocio.Text = "Remover Negócio"
         Me.btnRemoverNegocio.UseVisualStyleBackColor = True
         '
-        'optCusto
-        '
-        Me.optCusto.AutoSize = True
-        Me.optCusto.Location = New System.Drawing.Point(131, 98)
-        Me.optCusto.Name = "optCusto"
-        Me.optCusto.Size = New System.Drawing.Size(52, 17)
-        Me.optCusto.TabIndex = 24
-        Me.optCusto.TabStop = True
-        Me.optCusto.Text = "Custo"
-        Me.optCusto.UseVisualStyleBackColor = True
-        '
-        'optMkup
-        '
-        Me.optMkup.AutoSize = True
-        Me.optMkup.Location = New System.Drawing.Point(189, 98)
-        Me.optMkup.Name = "optMkup"
-        Me.optMkup.Size = New System.Drawing.Size(61, 17)
-        Me.optMkup.TabIndex = 23
-        Me.optMkup.TabStop = True
-        Me.optMkup.Text = "Markup"
-        Me.optMkup.UseVisualStyleBackColor = True
-        '
-        'LabelResEsq
-        '
-        Me.LabelResEsq.AutoSize = True
-        Me.LabelResEsq.Location = New System.Drawing.Point(150, 24)
-        Me.LabelResEsq.Name = "LabelResEsq"
-        Me.LabelResEsq.Size = New System.Drawing.Size(39, 13)
-        Me.LabelResEsq.TabIndex = 4
-        Me.LabelResEsq.Text = "Label1"
-        '
-        'LabelResVidro
-        '
-        Me.LabelResVidro.AutoSize = True
-        Me.LabelResVidro.Location = New System.Drawing.Point(150, 55)
-        Me.LabelResVidro.Name = "LabelResVidro"
-        Me.LabelResVidro.Size = New System.Drawing.Size(39, 13)
-        Me.LabelResVidro.TabIndex = 5
-        Me.LabelResVidro.Text = "Label2"
-        '
-        'LabelVLResutlInstal
-        '
-        Me.LabelVLResutlInstal.AutoSize = True
-        Me.LabelVLResutlInstal.Location = New System.Drawing.Point(150, 85)
-        Me.LabelVLResutlInstal.Name = "LabelVLResutlInstal"
-        Me.LabelVLResutlInstal.Size = New System.Drawing.Size(39, 13)
-        Me.LabelVLResutlInstal.TabIndex = 6
-        Me.LabelVLResutlInstal.Text = "Label3"
-        '
-        'LabelTotalGeral
-        '
-        Me.LabelTotalGeral.AutoSize = True
-        Me.LabelTotalGeral.Location = New System.Drawing.Point(150, 116)
-        Me.LabelTotalGeral.Name = "LabelTotalGeral"
-        Me.LabelTotalGeral.Size = New System.Drawing.Size(39, 13)
-        Me.LabelTotalGeral.TabIndex = 7
-        Me.LabelTotalGeral.Text = "Label4"
-        '
-        'LabelMkpTotal
-        '
-        Me.LabelMkpTotal.AutoSize = True
-        Me.LabelMkpTotal.Location = New System.Drawing.Point(293, 118)
-        Me.LabelMkpTotal.Name = "LabelMkpTotal"
-        Me.LabelMkpTotal.Size = New System.Drawing.Size(39, 13)
-        Me.LabelMkpTotal.TabIndex = 11
-        Me.LabelMkpTotal.Text = "Label5"
-        '
-        'LabelMkpInst
-        '
-        Me.LabelMkpInst.AutoSize = True
-        Me.LabelMkpInst.Location = New System.Drawing.Point(293, 87)
-        Me.LabelMkpInst.Name = "LabelMkpInst"
-        Me.LabelMkpInst.Size = New System.Drawing.Size(39, 13)
-        Me.LabelMkpInst.TabIndex = 10
-        Me.LabelMkpInst.Text = "Label6"
-        '
-        'LabelMkpVidro
-        '
-        Me.LabelMkpVidro.AutoSize = True
-        Me.LabelMkpVidro.Location = New System.Drawing.Point(293, 57)
-        Me.LabelMkpVidro.Name = "LabelMkpVidro"
-        Me.LabelMkpVidro.Size = New System.Drawing.Size(39, 13)
-        Me.LabelMkpVidro.TabIndex = 9
-        Me.LabelMkpVidro.Text = "Label7"
-        '
-        'LabelMkpEsq
-        '
-        Me.LabelMkpEsq.AutoSize = True
-        Me.LabelMkpEsq.Location = New System.Drawing.Point(293, 26)
-        Me.LabelMkpEsq.Name = "LabelMkpEsq"
-        Me.LabelMkpEsq.Size = New System.Drawing.Size(39, 13)
-        Me.LabelMkpEsq.TabIndex = 8
-        Me.LabelMkpEsq.Text = "Label8"
-        '
-        'LabelMkpInstCliente
-        '
-        Me.LabelMkpInstCliente.AutoSize = True
-        Me.LabelMkpInstCliente.Location = New System.Drawing.Point(348, 86)
-        Me.LabelMkpInstCliente.Name = "LabelMkpInstCliente"
-        Me.LabelMkpInstCliente.Size = New System.Drawing.Size(45, 13)
-        Me.LabelMkpInstCliente.TabIndex = 14
-        Me.LabelMkpInstCliente.Text = "Label12"
-        '
-        'LabelMkpVidroCli
-        '
-        Me.LabelMkpVidroCli.AutoSize = True
-        Me.LabelMkpVidroCli.Location = New System.Drawing.Point(348, 56)
-        Me.LabelMkpVidroCli.Name = "LabelMkpVidroCli"
-        Me.LabelMkpVidroCli.Size = New System.Drawing.Size(45, 13)
-        Me.LabelMkpVidroCli.TabIndex = 13
-        Me.LabelMkpVidroCli.Text = "Label13"
-        '
-        'LabelEsqCliente
-        '
-        Me.LabelEsqCliente.AutoSize = True
-        Me.LabelEsqCliente.Location = New System.Drawing.Point(348, 25)
-        Me.LabelEsqCliente.Name = "LabelEsqCliente"
-        Me.LabelEsqCliente.Size = New System.Drawing.Size(45, 13)
-        Me.LabelEsqCliente.TabIndex = 12
-        Me.LabelEsqCliente.Text = "Label18"
-        '
-        'LabelMkpCliente
-        '
-        Me.LabelMkpCliente.AutoSize = True
-        Me.LabelMkpCliente.Location = New System.Drawing.Point(319, 172)
-        Me.LabelMkpCliente.Name = "LabelMkpCliente"
-        Me.LabelMkpCliente.Size = New System.Drawing.Size(45, 13)
-        Me.LabelMkpCliente.TabIndex = 18
-        Me.LabelMkpCliente.Text = "Label19"
-        '
-        'LabelDescTotal
-        '
-        Me.LabelDescTotal.AutoSize = True
-        Me.LabelDescTotal.Location = New System.Drawing.Point(179, 172)
-        Me.LabelDescTotal.Name = "LabelDescTotal"
-        Me.LabelDescTotal.Size = New System.Drawing.Size(45, 13)
-        Me.LabelDescTotal.TabIndex = 17
-        Me.LabelDescTotal.Text = "Label20"
-        '
-        'LabelFinalCliente
-        '
-        Me.LabelFinalCliente.AutoSize = True
-        Me.LabelFinalCliente.Location = New System.Drawing.Point(34, 172)
-        Me.LabelFinalCliente.Name = "LabelFinalCliente"
-        Me.LabelFinalCliente.Size = New System.Drawing.Size(45, 13)
-        Me.LabelFinalCliente.TabIndex = 16
-        Me.LabelFinalCliente.Text = "Label21"
-        '
         'LabelMetroQuad
         '
         Me.LabelMetroQuad.AutoSize = True
@@ -1002,7 +1012,7 @@ Partial Class Form1
         Me.LabelDtAlteracao.TabIndex = 48
         Me.LabelDtAlteracao.Text = "Label20"
         '
-        'Form1
+        'frmCalculo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
@@ -1051,8 +1061,8 @@ Partial Class Form1
         Me.Controls.Add(Me.btnnovaPRO)
         Me.Controls.Add(Me.btnpesquisaPRO)
         Me.MaximumSize = New System.Drawing.Size(983, 763)
-        Me.Name = "Form1"
-        Me.Text = "Form1"
+        Me.Name = "frmCalculo"
+        Me.Text = "Cálculo Esquadrias"
         Me.frmEsquadrias.ResumeLayout(False)
         Me.frmEsquadrias.PerformLayout()
         Me.frmInstalação.ResumeLayout(False)
@@ -1162,4 +1172,5 @@ Partial Class Form1
     Friend WithEvents LabelDataCriacao As Label
     Friend WithEvents LabelDescFabrica As Label
     Friend WithEvents LabelDtAlteracao As Label
+    Friend WithEvents lvwVidros As ListView
 End Class
